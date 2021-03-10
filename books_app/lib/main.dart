@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 /// responsible call for launching the application
@@ -22,7 +24,29 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('First screen ever')),
-      
+      body: Container(
+        padding: EdgeInsets.all(10),
+        color: Colors.yellow,
+        child: Container(
+          color: Colors.blue,
+          child: Container(
+            margin: EdgeInsets.all(30),
+            padding: EdgeInsets.all(40),
+            color: Colors.orange,
+            child: Container(
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: EdgeInsets.all(60),
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.white,
+                  child: Text('some random containers'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
