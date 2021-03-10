@@ -25,28 +25,67 @@ class FirstScreen extends StatelessWidget {
       body: Container(
         color: Colors.grey,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.blue[100],
-              ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[100],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[300],
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[500],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[700],
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-              child: Container(
-                color: Colors.blue[300],
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.blue[500],
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.blue[700],
-              ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[200],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[400],
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[600],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 200,
+                    color: Colors.blue[800],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
