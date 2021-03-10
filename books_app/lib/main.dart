@@ -1,3 +1,4 @@
+import 'package:books_app/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,37 +25,32 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  var image = Image.asset('images/nyt_placeholder.png', width: 200, height: 200);
-  var image2 = Image.asset('images/nyt_title.jpg', width: 200, height: 200);
-  var displayedImage = 1;
-
+  String _joke = '';
+  _loadJoke(){
+    fetchJoke().then((value){
+      print(value.toString());
+      setState(() {
+        _joke=value;
+      });
+    },onError: (e){
+      print(e.toString());
+    });
+  }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text('First screen ever')),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.edit_outlined),
           onPressed: () {
-            if (displayedImage == 1) {
-              setState(() {
-                displayedImage = 2;
-              });
-            } else {
-              setState(() {
-                displayedImage = 1;
-              });
-            }
-            print('changed');
+            print('pressed');
+            _loadJoke();
           }),
       body: Container(
         color: Colors.grey,
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (displayedImage == 1) image else image2,
-            ],
-          ),
+          child: Text(_joke),
         ),
       ),
     );
