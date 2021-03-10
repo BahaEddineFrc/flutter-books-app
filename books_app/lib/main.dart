@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// responsible call for launching the application
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo', //displayed in recent apps (mobile) and tabs titles (web)
+      title: 'Flutter app', //displayed in recent apps (mobile) and tabs titles (web)
       theme: ThemeData(primarySwatch: Colors.red),
       home: FirstScreen(),
       debugShowCheckedModeBanner: false,
@@ -20,31 +21,21 @@ class MyApp extends StatelessWidget {
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var image = Image.asset('images/nyt_placeholder.png',width: 200,height: 200);
+    var image2 = Image.asset('images/nyt_title.jpg',width: 200,height: 200);
+
     return Scaffold(
       appBar: AppBar(title: Text('First screen ever')),
       body: Container(
         color: Colors.grey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text('Jhon'),
-                Text('Snow'),
-              ],
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text('Ned'),
-                Text('Stark'),
-              ],
-            ),
-            SizedBox(height: 30),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              image,
+              image2,
+            ],
+          ),
         ),
       ),
     );
