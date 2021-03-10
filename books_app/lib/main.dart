@@ -18,21 +18,31 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  var image = Image.asset('images/nyt_placeholder.png', width: 200, height: 200);
+  var image2 = Image.asset('images/nyt_title.jpg', width: 200, height: 200);
+  var displayedImage = 1;
+
   @override
   Widget build(BuildContext context) {
-    var image = Image.asset('images/nyt_placeholder.png', width: 200, height: 200);
-    var image2 = Image.asset('images/nyt_title.jpg', width: 200, height: 200);
-    var displayedImage = image;
     return Scaffold(
       appBar: AppBar(title: Text('First screen ever')),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.edit_outlined),
           onPressed: () {
-            if (displayedImage == image) {
-              displayedImage = image2;
+            if (displayedImage == 1) {
+              setState(() {
+                displayedImage = 2;
+              });
             } else {
-              displayedImage = image;
+              setState(() {
+                displayedImage = 1;
+              });
             }
             print('changed');
           }),
@@ -42,7 +52,7 @@ class FirstScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              displayedImage,
+              if (displayedImage == 1) image else image2,
             ],
           ),
         ),
