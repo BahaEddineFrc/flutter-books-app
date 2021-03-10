@@ -26,24 +26,26 @@ class FirstScreen extends StatelessWidget {
         color: Colors.grey,
         child: Column(
           children: [
-            Container(
-              color: Colors.blue[100],
-              height: 200,
-            ),
-            Container(
-              color: Colors.blue[300],
-              height: 200,
+            Expanded(
+              flex: 2,
+              child: Container(
+                color: Colors.blue[100],
+              ),
             ),
             Expanded(
               child: Container(
+                color: Colors.blue[300],
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
                 color: Colors.blue[500],
-                height: 200,
               ),
             ),
             Expanded(
               child: Container(
                 color: Colors.blue[700],
-                height: 200,
               ),
             ),
           ],
