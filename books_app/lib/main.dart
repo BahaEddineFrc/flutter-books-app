@@ -34,13 +34,17 @@ class FirstScreen extends StatelessWidget {
               color: Colors.blue[300],
               height: 200,
             ),
-            Container(
-              color: Colors.blue[500],
-              height: 200,
+            Expanded(
+              child: Container(
+                color: Colors.blue[500],
+                height: 200,
+              ),
             ),
-            Container(
-              color: Colors.blue[700],
-              height: 200,
+            Expanded(
+              child: Container(
+                color: Colors.blue[700],
+                height: 200,
+              ),
             ),
           ],
         ),
