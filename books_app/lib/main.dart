@@ -40,10 +40,10 @@ class _FirstScreenState extends State<FirstScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+          centerTitle: true,
           title: Text(
-        'Hardcover Fiction Books',
-      )),
+            'Hardcover Fiction Books',
+          )),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.edit_outlined),
           onPressed: () {
@@ -72,15 +72,30 @@ class _FirstScreenState extends State<FirstScreen> {
       child: Row(
         children: [
           Expanded(
-            child: Image.network(book.bookImage, height: 150),
+            child: Container(
+              height: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: NetworkImage(book.bookImage)),
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.4),
+                    spreadRadius: 2,
+                    blurRadius: 15,
+                    offset: Offset(0, 2), // changes position of shadow
+                  ),
+                ],
+              ),
+            ),
           ),
+          SizedBox(width: 10),
           Expanded(
             flex: 2,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '#'+book.rank.toString()+' '+book.title,
+                  '#' + book.rank.toString() + ' ' + book.title,
                   textAlign: TextAlign.left,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
