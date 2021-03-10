@@ -27,66 +27,23 @@ class FirstScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            SizedBox(height: 30),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[100],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[300],
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[500],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[700],
-                  ),
-                ),
+                Text('Jhon'),
+                Text('Snow'),
               ],
             ),
+            SizedBox(height: 30),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[200],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[400],
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[600],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200,
-                    color: Colors.blue[800],
-                  ),
-                ),
+                Text('Ned'),
+                Text('Stark'),
               ],
             ),
+            SizedBox(height: 30),
           ],
         ),
       ),
