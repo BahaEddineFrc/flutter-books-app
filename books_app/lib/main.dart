@@ -2,6 +2,8 @@ import 'package:books_app/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'book.dart';
+
 /// responsible call for launching the application
 void main() {
   runApp(MyApp());
@@ -25,38 +27,35 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  String _joke = '';
-  _loadJoke()async{
-    var joke = await fetchJoke();
-    setState(() {
-      _joke=joke;
-    });
+  BookList _books;
 
-    /*fetchJoke().then((value){
-      print(value.toString());
-      setState(() {
-        _joke=value;
-      });
-    },onError: (e){
-      print(e.toString());
-    });*/
+  _loadBooks() async {
+    BookList books = await getBooks();
+    setState(() {
+      _books = books;
+    });
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title: Text('First screen ever')),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.edit_outlined),
           onPressed: () {
             print('pressed');
-            _loadJoke();
+            _loadBooks();
           }),
       body: Container(
         color: Colors.grey,
-        child: Center(
-          child: Text(_joke),
-        ),
+        child: _books != null
+            ? ListView.builder(
+                itemCount: _books.results.length,
+                itemBuilder: (context, index) => Text(_books.results[index].title),
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
     );
   }

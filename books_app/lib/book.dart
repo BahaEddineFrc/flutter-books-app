@@ -21,6 +21,11 @@ class Book{
     description = json['description'];
     bookImage = json['book_image'];
   }
+
+  @override
+  String toString() {
+    return 'Book{rank: $rank, title: $title}';
+  }
 }
 
 /// a List of books
@@ -39,6 +44,4 @@ class BookList {
       results = (json).map((i) => Book.fromJson(i)).toList();
     }
   }
-}
-
 }
