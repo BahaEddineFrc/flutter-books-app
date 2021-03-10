@@ -7,6 +7,7 @@ The app was developed as part of a training session for Flutter beginners
 
 The written code generates an app with the following display
 
+<img src="screenshot_books.gif" width="100" height="100">
 
 ![screenshot](screenshot_books.gif){:height="200px" width="500px"}
 
