@@ -26,15 +26,20 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   String _joke = '';
-  _loadJoke(){
-    fetchJoke().then((value){
+  _loadJoke()async{
+    var joke = await fetchJoke();
+    setState(() {
+      _joke=joke;
+    });
+
+    /*fetchJoke().then((value){
       print(value.toString());
       setState(() {
         _joke=value;
       });
     },onError: (e){
       print(e.toString());
-    });
+    });*/
   }
   @override
   Widget build(BuildContext context) {
