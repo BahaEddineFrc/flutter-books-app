@@ -7,8 +7,7 @@ The app was developed as part of a training session for Flutter beginners
 
 The written code generates an app with the following display
 
-
-![screenshot](screenshot_books.gif ':size=800')
+<img src="screenshot_books.gif" width="15%">
 
 ## Getting Started
 
@@ -27,5 +26,5 @@ These resources will help you get started:
 - [Documentation: Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
 
 If you're in Tunisia and need help getting started with Flutter or just wanna chat about how awesome Flutter is,
-contact our `Tunisian Flutter Community` on LinkedIn(https://www.linkedin.com/company/tunisian-flutter-community),
-Facebook(https://www.facebook.com/tunisianfluttercommunity/), Twitter(https://twitter.com/FlutterTunisian) or Instagram(https://www.instagram.com/tunisianfluttercommunity/)
+contact our `Tunisian Flutter Community` on [LinkedIn](https://www.linkedin.com/company/tunisian-flutter-community),
+[Facebook](https://www.facebook.com/tunisianfluttercommunity/), [Twitter](https://twitter.com/FlutterTunisian) or [Instagram](https://www.instagram.com/tunisianfluttercommunity/)
